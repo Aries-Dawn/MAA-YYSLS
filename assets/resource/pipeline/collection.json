@@ -1,0 +1,41 @@
+{
+    "collection": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "F",
+                    "玉",
+                    "楼",
+                    "春"
+                ],
+                "roi": [
+                    717,
+                    256,
+                    283,
+                    188
+                ]
+            }
+        },
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    70
+                ]
+            }
+        },
+        "rate_limit": 10000,
+        "timeout": 3000000,
+        "post_delay": 240000,
+        "focus": {
+            "Node.Recognition.Succeeded": "{name} 识别命中，准备开始执行",
+            "Node.Action.Starting": "{name} 开始执行，任务 ID: {task_id}",
+            "Node.Action.Succeeded": "{name} 执行成功，任务 ID: {task_id}",
+            "Node.Action.Failed": "{name} 执行失败，任务 ID: {task_id}"
+        },
+        "next": [
+            "collection"
+        ]
+    }
+}

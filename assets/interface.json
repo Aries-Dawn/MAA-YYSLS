@@ -47,6 +47,10 @@
         {
             "name": "太极炸鱼",
             "entry": "太极炸鱼"
+        },
+        {
+            "name": "收集",
+            "entry": "collection"
         }
     ]
     // "option": {
