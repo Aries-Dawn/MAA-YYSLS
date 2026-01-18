@@ -33,7 +33,7 @@
             "Node.Action.Failed": "{name} 执行失败，任务 ID: {task_id}"
         },
         "next": [
-            "collection"
+            "click2"
         ]
     },
     "click2": {
