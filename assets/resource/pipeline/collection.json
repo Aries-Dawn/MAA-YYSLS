@@ -35,5 +35,33 @@
         "next": [
             "collection"
         ]
+    },
+    "click2": {
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    70
+                ]
+            }
+        },
+        "timeout": 30000000,
+        "next": [
+            "collection"
+        ]
+    },
+    "click3": {
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    70
+                ]
+            }
+        },
+        "timeout": 30000000,
+        "next": [
+            "collection"
+        ]
     }
 }
