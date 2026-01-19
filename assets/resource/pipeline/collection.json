@@ -63,5 +63,84 @@
         "next": [
             "collection"
         ]
+    },
+    "采集马": {
+        "next": [
+            "落马",
+            "collection_house"
+        ]
+    },
+    "collection_house": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "岫玉",
+                    "玉",
+                    "岫王"
+                ],
+                "roi": [
+                    717,
+                    256,
+                    283,
+                    188
+                ]
+            }
+        },
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    90
+                ]
+            }
+        },
+        "timeout": 30000000,
+        "focus": {
+            "Node.Recognition.Succeeded": "检测到岫玉，准备开始执行",
+            "Node.Action.Starting": "开始执行",
+            "Node.Action.Succeeded": "执行成功",
+            "Node.Action.Failed": "执行失败，任务 ID: {task_id}"
+        },
+        "next": [
+            "落马",
+            "collection_house"
+        ]
+    },
+    "落马": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "上马",
+                    "上",
+                    "马"
+                ],
+                "roi": [
+                    717,
+                    256,
+                    283,
+                    188
+                ]
+            }
+        },
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    70
+                ]
+            }
+        },
+        "timeout": 30000000,
+        "focus": {
+            "Node.Recognition.Succeeded": "检测到落马，准备开始执行",
+            "Node.Action.Starting": "开始执行",
+            "Node.Action.Succeeded": "执行成功",
+            "Node.Action.Failed": "{name} 执行失败，任务 ID: {task_id}"
+        },
+        "next": [
+            "collection_house"
+        ]
     }
 }
