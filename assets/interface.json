@@ -52,7 +52,7 @@
         },
         {
             "name": "收集",
-            "entry": "collection",
+            "entry": "采集入口",
             "option": [
                 "有无采集马"
             ]
@@ -70,7 +70,11 @@
                 {
                     "name": "Yes",
                     "pipeline_override": {
-                        "entry": "collection_house"
+                        "采集入口": {
+                            "next": [
+                                "采集马"
+                            ]
+                        }
                     }
                 }
             ]

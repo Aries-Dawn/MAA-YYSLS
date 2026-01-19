@@ -64,6 +64,19 @@
             "collection"
         ]
     },
+    "采集入口": {
+        "timeout": 3000000,
+        "next": [
+            "collection"
+        ]
+    },
+    "采集马": {
+        "timeout": 3000000,
+        "next": [
+            "collection_house",
+            "落马"
+        ]
+    },
     "collection_house": {
         "recognition": {
             "type": "OCR",
@@ -71,7 +84,11 @@
                 "expected": [
                     "岫玉",
                     "玉",
-                    "岫王"
+                    "岫王",
+                    "唐",
+                    "宫",
+                    "羽",
+                    "衣"
                 ],
                 "roi": [
                     717,
@@ -79,6 +96,29 @@
                     283,
                     188
                 ]
+            }
+        },
+        "timeout": 30000000,
+        "focus": {
+            "Node.Recognition.Succeeded": "检测到岫玉/唐宫羽衣，准备开始执行",
+            "Node.Action.Starting": "检测到岫玉/唐宫羽衣，正在检测有没有在马上",
+            "Node.Action.Failed": "执行失败，任务 ID: {task_id}"
+        },
+        "next": [
+            "在马上吗"
+        ]
+    },
+    "在马上吗": {
+        "next": [
+            "在马上",
+            "不在马上"
+        ]
+    },
+    "在马上": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "xiama.png"
             }
         },
         "action": {
@@ -91,14 +131,38 @@
         },
         "timeout": 30000000,
         "focus": {
-            "Node.Recognition.Succeeded": "检测到岫玉，准备开始执行",
-            "Node.Action.Starting": "开始执行",
-            "Node.Action.Succeeded": "执行成功",
+            "Node.Recognition.Succeeded": "检测到在马上，准备开始执行集英",
+            "Node.Action.Starting": "开始集英",
+            "Node.Action.Succeeded": "集英成功",
             "Node.Action.Failed": "执行失败，任务 ID: {task_id}"
         },
         "next": [
-            "collection_house",
-            "落马"
+            "落马",
+            "collection_house"
+        ]
+    },
+    "不在马上": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "xiama.png",
+                "roi": [
+                    821,
+                    524,
+                    459,
+                    196
+                ]
+            }
+        },
+        "inverse": true,
+        "action": "DoNothing",
+        "timeout": 30000000,
+        "focus": {
+            "Node.Action.Failed": "执行失败，任务 ID: {task_id}"
+        },
+        "next": [
+            "落马",
+            "collection_house"
         ]
     },
     "落马": {
@@ -128,14 +192,14 @@
         },
         "timeout": 30000000,
         "focus": {
-            "Node.Recognition.Succeeded": "检测到落马，准备开始执行",
-            "Node.Action.Starting": "开始执行",
-            "Node.Action.Succeeded": "执行成功",
+            "Node.Recognition.Succeeded": "检测到落马，准备再次上马",
+            "Node.Action.Starting": "开始上马",
+            "Node.Action.Succeeded": "上马成功",
             "Node.Action.Failed": "{name} 执行失败，任务 ID: {task_id}"
         },
         "next": [
-            "collection_house",
-            "落马"
+            "落马",
+            "collection_house"
         ]
     }
 }
