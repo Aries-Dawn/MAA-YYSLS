@@ -64,12 +64,6 @@
             "collection"
         ]
     },
-    "采集马": {
-        "next": [
-            "落马",
-            "collection_house"
-        ]
-    },
     "collection_house": {
         "recognition": {
             "type": "OCR",
@@ -103,8 +97,8 @@
             "Node.Action.Failed": "执行失败，任务 ID: {task_id}"
         },
         "next": [
-            "落马",
-            "collection_house"
+            "collection_house",
+            "落马"
         ]
     },
     "落马": {
@@ -140,7 +134,8 @@
             "Node.Action.Failed": "{name} 执行失败，任务 ID: {task_id}"
         },
         "next": [
-            "collection_house"
+            "collection_house",
+            "落马"
         ]
     }
 }

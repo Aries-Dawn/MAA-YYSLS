@@ -27,7 +27,7 @@
                 "screencap": "PrintWindow",
                 "mouse": "SendMessage",
                 "keyboard": "SendMessage"
-            }
+            },
         }
     ],
     "resource": [
@@ -52,13 +52,17 @@
         },
         {
             "name": "收集",
-            "entry": "collection"
+            "entry": "collection",
+            "option": [
+                "有无采集马"
+            ]
         }
     ],
     "option": {
-        "收集": {
+        "有无采集马": {
             "label": "有没有采集马",
             "type": "switch",
+            "default_case": "No",
             "cases": [
                 {
                     "name": "No"
@@ -66,7 +70,7 @@
                 {
                     "name": "Yes",
                     "pipeline_override": {
-                        "entry": "采集马"
+                        "entry": "collection_house"
                     }
                 }
             ]
