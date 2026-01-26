@@ -201,5 +201,35 @@
             "落马",
             "collection_house"
         ]
+    },
+    "yueKa": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "yueka.png"
+                ],
+                "roi": [
+                    166,
+                    44,
+                    1012,
+                    194
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    598,
+                    640,
+                    82,
+                    18
+                ]
+            }
+        },
+        "next": [
+            "yueKa"
+        ]
     }
 }

@@ -56,6 +56,10 @@
             "option": [
                 "有无采集马"
             ]
+        },
+        {
+            "name": "test",
+            "entry": "yueKa"
         }
     ],
     "option": {
@@ -74,6 +78,33 @@
                             "next": [
                                 "采集马"
                             ]
+                        }
+                    },
+                    "option": [
+                        "采集技能位置"
+                    ]
+                }
+            ]
+        },
+        "采集技能位置": {
+            "label": "技能位置",
+            "type": "select",
+            "default_case": "Z",
+            "cases": [
+                {
+                    "name": "Z"
+                },
+                {
+                    "name": "1",
+                    "pipeline_override": {
+                        "在马上": {
+                            "action": {
+                                "param": {
+                                    "key": [
+                                        49
+                                    ]
+                                }
+                            }
                         }
                     }
                 }
