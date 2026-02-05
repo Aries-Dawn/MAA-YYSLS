@@ -120,25 +120,45 @@
             "inputs": [
                 {
                     "name": "识别内容",
-                    "label": "$识别内容",
-                    "description": "自己写捡什么东西，名字分写例如（唐宫羽衣）：\"唐\"，\"宫\"，\"羽\"，\"衣\"",
-                    "default": "\"唐\"，\"宫\"，\"羽\"，\"衣\"",
+                    "label": "$第一个",
+                    "description": "自己写捡什么东西，名字分写例如（唐宫羽衣）：\"唐\"",
+                    "default": "唐",
                     "pipeline_type": "string",
-                    //"verify": "^\\w+$"
+                    "verify": "^[\u4E00-\u9FA5]+"
+                },
+                {
+                    "name": "识别内容1",
+                    "label": "$第二个",
+                    "description": "自己写捡什么东西，名字分写例如（唐宫羽衣）：\"宫\"",
+                    "default": "宫",
+                    "pipeline_type": "string",
+                    "verify": "^[\u4E00-\u9FA5]+"
+                },
+                {
+                    "name": "识别内容2",
+                    "label": "$第三个",
+                    "description": "自己写捡什么东西，名字分写例如（唐宫羽衣）：\"羽\"",
+                    "default": "羽",
+                    "pipeline_type": "string",
+                    "verify": "^[\u4E00-\u9FA5]+"
                 }
             ],
             "pipeline_override": {
                 "collection_house": {
                     "recognition": {
                         "expected": [
-                            "{识别内容}"
+                            "{第一个}",
+                            "{第二个}",
+                            "{第三个}"
                         ]
                     }
                 },
                 "collection": {
                     "recognition": {
                         "expected": [
-                            "{识别内容}"
+                            "{第一个}",
+                            "{第二个}",
+                            "{第三个}"
                         ]
                     }
                 }
