@@ -61,20 +61,23 @@
         },
         "timeout": 30000000,
         "next": [
-            "collection"
+            "collection",
+            "[JumpBack]yueKa"
         ]
     },
     "采集入口": {
         "timeout": 3000000,
         "next": [
-            "collection"
+            "collection",
+            "[JumpBack]yueKa"
         ]
     },
     "采集马": {
         "timeout": 3000000,
         "next": [
             "collection_house",
-            "落马"
+            "落马",
+            "[JumpBack]yueKa"
         ]
     },
     "collection_house": {
@@ -105,7 +108,8 @@
             "Node.Action.Failed": "执行失败，任务 ID: {task_id}"
         },
         "next": [
-            "在马上吗"
+            "在马上吗",
+            "[JumpBack]yueKa"
         ]
     },
     "在马上吗": {
@@ -138,7 +142,8 @@
         },
         "next": [
             "落马",
-            "collection_house"
+            "collection_house",
+            "[JumpBack]yueKa"
         ]
     },
     "不在马上": {
@@ -162,7 +167,8 @@
         },
         "next": [
             "落马",
-            "collection_house"
+            "collection_house",
+            "[JumpBack]yueKa"
         ]
     },
     "落马": {
@@ -199,7 +205,8 @@
         },
         "next": [
             "落马",
-            "collection_house"
+            "collection_house",
+            "[JumpBack]yueKa"
         ]
     },
     "yueKa": {
@@ -228,8 +235,11 @@
                 ]
             }
         },
-        "next": [
-            "yueKa"
-        ]
+        "focus": {
+            "Node.Recognition.Succeeded": "检测到月卡",
+            "Node.Action.Starting": "开始领取",
+            "Node.Action.Succeeded": "领取成功",
+            "Node.Action.Failed": "{name} 执行失败，任务 ID: {task_id}"
+        },
     }
 }

@@ -48,12 +48,14 @@
     "task": [
         {
             "name": "太极炸鱼",
-            "entry": "太极炸鱼"
+            "entry": "太极炸鱼",
+            "description": "太极技能放在键盘1 的位置"
         },
         {
             "name": "收集",
             "entry": "采集入口",
             "option": [
+                "采集物品信息",
                 "有无采集马"
             ]
         },
@@ -109,6 +111,38 @@
                     }
                 }
             ]
+        },
+        "采集物品信息": {
+            "type": "input",
+            "label": "自定义物品",
+            "description": "",
+            "icon": "扳手.png",
+            "inputs": [
+                {
+                    "name": "识别内容",
+                    "label": "$识别内容",
+                    "description": "自己写捡什么东西，名字分写例如（唐宫羽衣）：\"唐\"，\"宫\"，\"羽\"，\"衣\"",
+                    "default": "\"唐\"，\"宫\"，\"羽\"，\"衣\"",
+                    "pipeline_type": "string",
+                    //"verify": "^\\w+$"
+                }
+            ],
+            "pipeline_override": {
+                "collection_house": {
+                    "recognition": {
+                        "expected": [
+                            "{识别内容}"
+                        ]
+                    }
+                },
+                "collection": {
+                    "recognition": {
+                        "expected": [
+                            "{识别内容}"
+                        ]
+                    }
+                }
+            }
         }
     }
 }
