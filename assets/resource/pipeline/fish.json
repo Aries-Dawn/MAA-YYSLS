@@ -1,5 +1,19 @@
 {
     "太极炸鱼": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "taiji1.png"
+                ],
+                "roi": [
+                    395,
+                    615,
+                    78,
+                    77
+                ]
+            }
+        },
         "action": {
             "type": "ClickKey",
             "param": {
