@@ -116,11 +116,10 @@
             "type": "input",
             "label": "自定义物品",
             "description": "",
-            "icon": "扳手.png",
             "inputs": [
                 {
                     "name": "识别内容",
-                    "label": "$第一个",
+                    "label": "第一个",
                     "description": "自己写捡什么东西，名字分写例如（唐宫羽衣）：\"唐\"",
                     "default": "唐",
                     "pipeline_type": "string",
@@ -128,7 +127,7 @@
                 },
                 {
                     "name": "识别内容1",
-                    "label": "$第二个",
+                    "label": "第二个",
                     "description": "自己写捡什么东西，名字分写例如（唐宫羽衣）：\"宫\"",
                     "default": "宫",
                     "pipeline_type": "string",
@@ -136,7 +135,7 @@
                 },
                 {
                     "name": "识别内容2",
-                    "label": "$第三个",
+                    "label": "第三个",
                     "description": "自己写捡什么东西，名字分写例如（唐宫羽衣）：\"羽\"",
                     "default": "羽",
                     "pipeline_type": "string",
